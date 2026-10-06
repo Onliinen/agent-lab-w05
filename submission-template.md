@@ -5,21 +5,23 @@ Use a group code, not real names or student IDs in shared files. / 共用檔只�
 - Group code / 組別：G-01
 - Tool / 工具：Antigravity
 - Route / 路線：individual 個人
-- Tasks completed / 完成題目：A, B, D
+- Tasks completed / 完成題目：A, B, C, D
 - Material / 素材：NDHU classroom tasks 東華課堂版
 - For original-pack work: task number, author/source link and version / 原版實作：題號、作者來源連結與版本：無（使用東華課堂版）
-- My role and what I checked / 我的角色與實際檢查：負責提示詞下達、AI 執行計畫審核確認、檔案組織驗收（SHA-256 雜湊一致性、無刪除無覆蓋）、挑選器功能全項測試、惡意/錯誤計畫退回與修正建議。
+- My role and what I checked / 我的角色與實際檢查：負責提示詞下達、AI 執行計畫審核確認、檔案組織驗收（SHA-256 雜湊一致性、無刪除無覆蓋）、挑選器功能全項測試、器材資料清理品質查核（有效列/移除列數、相同 ID 保留、異常值原樣保留）、惡意/錯誤計畫退回與修正建議。
 
 ## Scope and plan / 範圍與計畫
 
 Allowed input and output folders / 可讀取與輸出的資料夾：
 - 任務 A：允許讀取 `practice/01-club-files/input/`，輸出至 `practice/01-club-files/output/`。
 - 任務 B：允許讀取 `practice/02-campus-picker/activities.json`，輸出至 `practice/02-campus-picker/output/index.html`。
+- 任務 C：允許讀取 `practice/03-equipment/equipment.json`，輸出至 `practice/03-equipment/output/`。
 - 任務 D：允許讀取 `practice/04-review/bad-plan.txt`，輸出至 `practice/04-review/my-rejection.md`。
 
 What I asked for / 原始需求：
 - 任務 A：先讀取 `input/` 並提出整理計畫，經確認後將 12 個檔案完整複製至適當分類，原檔保持不動，完全保留同內容副本與不同版本提案，產出 `manifest.json` 與 `report.md`。
 - 任務 B：單頁離線小工具，依地點、時間、強度嚴格篩選並隨機挑選活動，無符合不偷放寬，記錄最近 5 次成功抽選，提供重設篩選、中英文即時切換。
+- 任務 C：依清理規則處理器材資料，全空列移除，保留原始 source_row，統一狀態為 available/borrowed/unknown，異常數量原樣保留不猜測，相同 ID 全數保留並分析衝突欄位。
 - 任務 D：審查模擬計畫 `bad-plan.txt`，指認嚴重錯誤並撰寫具體退回訊息與合規替代方案。
 
 What I checked before execution / 動手前我檢查了什麼：
@@ -34,6 +36,7 @@ What I checked before execution / 動手前我檢查了什麼：
 | 2. 任務 B 篩選：室外 / 15分鐘 / 中強度 | 因無活動同時符合此三項條件，應顯示「沒有符合條件的活動」，不可偷改放寬條件 | 頁面紅字清晰顯示「沒有符合條件的活動」，未放寬條件，且該次未加入歷史紀錄 | `practice/02-campus-picker/output/index.html` |
 | 3. 任務 B 唯一符合：室外 / 30分鐘 / 中強度 | 僅有 A09（在合適位置快走）符合條件，每次抽選必然皆為 A09 | 連續抽選多次，每次均準確抽中 A09，符合預期 | `practice/02-campus-picker/output/index.html` |
 | 4. 任務 B 歷史紀錄容量上限測試 | 不限/60分鐘/不限條件下連續成功抽選 6 次，紀錄僅保留最近 5 筆且最新在前 | 歷史列表嚴格維持最多 5 筆，第 6 次抽中後最舊的第 1 次自動被移除，最新在頂部 | `practice/02-campus-picker/output/index.html` |
+| 5. 任務 C 器材清理與品質檢驗 | 10 列原始資料移除 1 列空物件後輸出 9 列有效資料，保留同 ID（EQ01, EQ02）與原始 source_row，異常 qty（空白、-1）原樣保留，非標準狀態標為 unknown | 輸出 9 筆有效列，移除第 6 列全空列；EQ01 與 EQ02 重複項皆保留；row 7 空白與 row 8 負數皆原樣保留並於 issues.md 標註；row 9 標為 unknown | `practice/03-equipment/output/normalized.json` 與 `issues.md` |
 
 ## One revision / 一次修改
 
@@ -69,4 +72,5 @@ An acceptable alternative / 可以怎麼改：
 What I cannot claim is complete / 哪些事不能說已完成：
 1. 兩份社團提案（室外 30 分鐘 vs. 室內 20 分鐘）何者為最終定案：需社團實體會議討論表決，Agent 不能代為定奪。
 2. 預算草案（100 虛構單位）是否能獲得經費核准：需相關幹部或學校行政審批。
-3. 隨機挑選器的統計機率分佈：手動進行數次測試可驗證功能正常，但不能證明極大樣本下的隨機性統計完美均勻。
+3. 器材記錄衝突與缺失的實際現況：`EQ02` 數量究竟是 2 還是 3、`EQ04` 紙張包真實存量、`EQ05` 負數之原因，需實體盤點確認，不能憑空斷定。
+4. 隨機挑選器的統計機率分佈：手動進行數次測試可驗證功能正常，但不能證明極大樣本下的隨機性統計完美均勻。
