@@ -1,0 +1,62 @@
+[
+  {
+    "source": "announcement.txt",
+    "destination": "announcements/announcement.txt",
+    "reason": "活動注意事項與宣傳公告"
+  },
+  {
+    "source": "announcement_copy.txt",
+    "destination": "announcements/announcement_copy.txt",
+    "reason": "活動注意事項與宣傳公告（內容與 announcement.txt 完全相同，依規格保留副本）"
+  },
+  {
+    "source": "budget_draft.txt",
+    "destination": "logistics/budget_draft.txt",
+    "reason": "活動預算草案規劃（非核准支出，列入待確認）"
+  },
+  {
+    "source": "equipment_backup.txt",
+    "destination": "logistics/equipment_backup.txt",
+    "reason": "活動器材清單備份（內容與 equipment_list.txt 完全相同，依規格保留副本）"
+  },
+  {
+    "source": "equipment_list.txt",
+    "destination": "logistics/equipment_list.txt",
+    "reason": "活動所需器材與物資清單"
+  },
+  {
+    "source": "feedback_questions.txt",
+    "destination": "feedback/feedback_questions.txt",
+    "reason": "活動結束後的問卷回饋與檢討題目"
+  },
+  {
+    "source": "meeting_notes.txt",
+    "destination": "proposals/meeting_notes.txt",
+    "reason": "會議討論記錄與待決事項"
+  },
+  {
+    "source": "next_steps.txt",
+    "destination": "proposals/next_steps.txt",
+    "reason": "後續步驟指引與提案比較說明"
+  },
+  {
+    "source": "poster_text.txt",
+    "destination": "announcements/poster_text.txt",
+    "reason": "宣傳海報標語與文案"
+  },
+  {
+    "source": "proposal_final.txt",
+    "destination": "proposals/proposal_final.txt",
+    "reason": "活動提案版本一（室外30分鐘，內容與 final2 不同，全數保留）"
+  },
+  {
+    "source": "proposal_final2.txt",
+    "destination": "proposals/proposal_final2.txt",
+    "reason": "活動提案版本二（室內20分鐘，內容與 final 不同，全數保留）"
+  },
+  {
+    "source": "rain_plan.txt",
+    "destination": "proposals/rain_plan.txt",
+    "reason": "雨天備案規劃與替代方案討論"
+  }
+]
