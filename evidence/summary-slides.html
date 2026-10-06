@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDHU Campus Agent Lab - Summary Slides</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+    .dot.active {
+      background-color: var(--primary, #2563eb);
+      width: 28px;
+    }
+  </style>
+</head>
+<body class="bg-transparent text-[var(--foreground,#0f172a)] antialiased p-3 sm:p-5 flex flex-col items-center justify-center min-h-[520px]">
+  
+  <div class="w-full max-w-3xl bg-[var(--card,#ffffff)] border border-[var(--border,#e2e8f0)] rounded-2xl shadow-xl overflow-hidden flex flex-col justify-between" style="min-height: 480px;">
+    
+    <!-- Top Bar -->
+    <div class="px-6 py-4 border-b border-[var(--border,#e2e8f0)] flex justify-between items-center bg-[var(--background,#f8fafc)]/50">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground,#64748b)]">NDHU Agent Lab • agent-lab-w05</span>
+      </div>
+      <div class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300" id="slide-badge">
+        Slide 1 / 7
+      </div>
+    </div>
+
+    <!-- Slide Content Container -->
+    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-center">
+
+      <!-- Slide 1: Title -->
+      <div class="slide active flex-col text-center space-y-4" data-index="0">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/30 mx-auto text-2xl font-black">
+          🤖
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--foreground,#0f172a)]">
+          NDHU Campus Agent Lab
+        </h1>
+        <p class="text-sm sm:text-base text-[var(--muted-foreground,#64748b)] max-w-xl mx-auto">
+          讓 AI 幫你完成一件校園小事 · Practical Agent Pairing & Critical Inspection
+        </p>
+        <div class="pt-4 grid grid-cols-3 gap-3 max-w-lg mx-auto text-left">
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-[var(--border,#e2e8f0)]">
+            <div class="text-xs text-[var(--muted-foreground,#64748b)]">Core Theme</div>
+            <div class="font-bold text-xs sm:text-sm mt-0.5">Human-in-the-Loop</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-[var(--border,#e2e8f0)]">
+            <div class="text-xs text-[var(--muted-foreground,#64748b)]">Milestones</div>
+            <div class="font-bold text-xs sm:text-sm mt-0.5">Tasks A · B · C · D</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-[var(--border,#e2e8f0)]">
+            <div class="text-xs text-[var(--muted-foreground,#64748b)]">Tracking</div>
+            <div class="font-bold text-xs sm:text-sm mt-0.5">Git Commit Discipline</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Core Philosophy -->
+      <div class="slide flex-col space-y-4" data-index="1">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Four Core Principles</span>
+          <h2 class="text-xl sm:text-2xl font-bold">What is this lab actually teaching?</h2>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground,#64748b)]">
+            Moving from passive prompt users to active, critical evaluators of autonomous agents.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 pt-2">
+          <div class="p-3.5 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50/50 dark:bg-blue-950/20">
+            <div class="text-lg mb-1">🔍 <b>1. Understand Plans</b></div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)]">Demand plain-language plans before execution. Never give blank checks to write/delete tools.</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-emerald-200 dark:border-emerald-900 bg-emerald-50/50 dark:bg-emerald-950/20">
+            <div class="text-lg mb-1">⚖️ <b>2. Verify Results</b></div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)]">Verify with objective metrics: SHA-256 hashes, exact item counts, and boundary testing.</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/20">
+            <div class="text-lg mb-1">🛑 <b>3. Recognize Limits</b></div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)]">Catch permission overreach (reading Downloads, inventing missing quantities, unapproved sharing).</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-purple-200 dark:border-purple-900 bg-purple-50/50 dark:bg-purple-950/20">
+            <div class="text-lg mb-1">🔄 <b>4. Iterate & Reject</b></div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)]">Provide actionable rejection feedback and distinguish defects from newly expanded requests.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Task A -->
+      <div class="slide flex-col space-y-4" data-index="2">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Task A · 01-club-files</span>
+          <h2 class="text-xl sm:text-2xl font-bold">Safe File Organization & Version Integrity</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div class="p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="text-xs text-blue-600 font-bold uppercase">100% Non-Destructive</div>
+            <div class="text-sm font-semibold mt-1">Untouched Source</div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)] mt-1">12 files in <code>input/</code> preserved. 12 exact copies organized into 4 semantic categories.</p>
+          </div>
+          <div class="p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="text-xs text-emerald-600 font-bold uppercase">Hash-Verified Integrity</div>
+            <div class="text-sm font-semibold mt-1">Duplicates Retained</div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)] mt-1">Retained identical copies (announcement & equipment) with matching SHA-256 hashes.</p>
+          </div>
+          <div class="p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="text-xs text-amber-600 font-bold uppercase">Anti-Hallucination</div>
+            <div class="text-sm font-semibold mt-1">No Final2 Assumption</div>
+            <p class="text-xs text-[var(--muted-foreground,#64748b)] mt-1">Both outdoor (v1) & indoor (v2) proposals kept. Manifest & Report generated.</p>
+          </div>
+        </div>
+        <div class="p-3 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 text-xs">
+          <b>Artifacts Generated:</b> <code>output/manifest.json</code> (12 mapped entries) & <code>output/report.md</code> (categorization & action items).
+        </div>
+      </div>
+
+      <!-- Slide 4: Task B -->
+      <div class="slide flex-col space-y-4" data-index="3">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Task B · 02-campus-picker</span>
+          <h2 class="text-xl sm:text-2xl font-bold">Offline Single-Page Campus Activity Picker</h2>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl border border-[var(--border,#e2e8f0)] space-y-1.5">
+            <div class="font-bold text-sm text-blue-600">Version 1 (B v1)</div>
+            <ul class="space-y-1 text-[var(--muted-foreground,#64748b)] list-disc list-inside">
+              <li>Self-contained <code>index.html</code> (no CDN, zero network).</li>
+              <li>Filter: Location (in/out/all), Time (15/30/60), Energy (low/med/all).</li>
+              <li>Strict matching with "No match" alert (never relaxes criteria).</li>
+              <li>Recent 5-draw history (latest first) & bilingual UI (ZH/EN).</li>
+            </ul>
+          </div>
+          <div class="p-3.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/30 dark:bg-blue-950/20 space-y-1.5">
+            <div class="font-bold text-sm text-emerald-600">Evolution (B v2)</div>
+            <ul class="space-y-1 text-[var(--muted-foreground,#64748b)] list-disc list-inside">
+              <li><b>Anti-consecutive repeat</b>: Never picks the same activity twice in a row when ≥2 match.</li>
+              <li><b>Live candidate counter</b>: Instant badge shows matching item count (red on 0).</li>
+              <li><b>Keyboard shortcuts</b>: Press Space or Enter to pick instantly.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-xs text-[var(--muted-foreground,#64748b)] italic text-center">
+          Verified against 6 standardized boundary tests (outdoor/15m/med empty state, outdoor/30m/med deterministic A09, history overflow).
+        </div>
+      </div>
+
+      <!-- Slide 5: Task C -->
+      <div class="slide flex-col space-y-4" data-index="4">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Task C · 03-equipment</span>
+          <h2 class="text-xl sm:text-2xl font-bold">Data Cleaning & Record Quality Assurance</h2>
+        </div>
+        <div class="grid grid-cols-3 gap-2.5 text-xs">
+          <div class="p-3 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="font-bold text-sm text-slate-800 dark:text-slate-200">10 ➔ 9 Rows</div>
+            <p class="text-[var(--muted-foreground,#64748b)] mt-1">Row 6 empty object <code>{}</code> pruned. Original <code>source_row</code> strictly preserved for traceability.</p>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="font-bold text-sm text-slate-800 dark:text-slate-200">Zero Invention</div>
+            <p class="text-[var(--muted-foreground,#64748b)] mt-1">Missing qty (<code>""</code>) and negative (<code>-1</code>) left as-is in data, flagged in <code>issues.md</code> without guessing.</p>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-800/40">
+            <div class="font-bold text-sm text-slate-800 dark:text-slate-200">Conflict Preservation</div>
+            <p class="text-[var(--muted-foreground,#64748b)] mt-1">Retained duplicate IDs (<code>EQ01</code> & <code>EQ02</code>). Highlighted quantity mismatch (2 vs 3) for human audit.</p>
+          </div>
+        </div>
+        <div class="p-3 rounded-lg border border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/20 text-xs text-amber-900 dark:text-amber-200">
+          <b>Key Takeaway:</b> Clean records objectively. Never speculate about whose fault a mistake was; focus on data fidelity.
+        </div>
+      </div>
+
+      <!-- Slide 6: Task D -->
+      <div class="slide flex-col space-y-4" data-index="5">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Task D · 04-review</span>
+          <h2 class="text-xl sm:text-2xl font-bold">Critical Plan Review & Formal Rejection</h2>
+        </div>
+        <div class="p-3 rounded-lg border border-red-200 dark:border-red-900 bg-red-50/60 dark:bg-red-950/30 text-xs">
+          <span class="font-bold text-red-700 dark:text-red-400">Flawed Proposal (bad-plan.txt):</span>
+          <p class="italic text-[var(--foreground,#0f172a)] mt-0.5">"I will organize everything in Downloads, delete duplicates, treat final2 as latest, fill missing values with guesses, and publish automatically."</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-lg border border-[var(--border,#e2e8f0)]">
+            <span class="font-bold text-red-600">❌ 5 Critical Red Flags:</span>
+            <ul class="list-disc list-inside text-[var(--muted-foreground,#64748b)] mt-1 space-y-0.5">
+              <li>Scope violation (reading Downloads)</li>
+              <li>Destructive duplicate deletion</li>
+              <li>Arbitrary filename versioning</li>
+              <li>Data hallucination / guessing</li>
+              <li>Unauthorized auto-publishing</li>
+            </ul>
+          </div>
+          <div class="p-2.5 rounded-lg border border-emerald-200 dark:border-emerald-900 bg-emerald-50/30 dark:bg-emerald-950/20">
+            <span class="font-bold text-emerald-600">✅ Formulated Alternative:</span>
+            <ul class="list-disc list-inside text-[var(--muted-foreground,#64748b)] mt-1 space-y-0.5">
+              <li>Strict task folder confinement</li>
+              <li>Non-destructive copy-only workflow</li>
+              <li>Hash comparison & full manifest</li>
+              <li>Explicit unknown flags in reports</li>
+              <li>Local-only manual verification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Git Timeline & Conclusion -->
+      <div class="slide flex-col space-y-4" data-index="6">
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Audit Trail</span>
+          <h2 class="text-xl sm:text-2xl font-bold">Disciplined Git Progression & Summary</h2>
+        </div>
+        <div class="space-y-1.5 text-xs font-mono">
+          <div class="p-2 rounded bg-slate-100 dark:bg-slate-800 flex justify-between">
+            <span><b class="text-blue-600">95f03f9</b> A: organize club files</span>
+            <span class="text-[var(--muted-foreground,#64748b)]">Task A output & report</span>
+          </div>
+          <div class="p-2 rounded bg-slate-100 dark:bg-slate-800 flex justify-between">
+            <span><b class="text-blue-600">d791a2f</b> B v1: activity picker</span>
+            <span class="text-[var(--muted-foreground,#64748b)]">Offline picker baseline</span>
+          </div>
+          <div class="p-2 rounded bg-slate-100 dark:bg-slate-800 flex justify-between">
+            <span><b class="text-blue-600">82bac42</b> B v2: add no consecutive repeats and live counter</span>
+            <span class="text-[var(--muted-foreground,#64748b)]">UX revision & tests</span>
+          </div>
+          <div class="p-2 rounded bg-slate-100 dark:bg-slate-800 flex justify-between">
+            <span><b class="text-blue-600">d9cd345</b> D: rejection</span>
+            <span class="text-[var(--muted-foreground,#64748b)]">Critical review note</span>
+          </div>
+          <div class="p-2 rounded bg-slate-100 dark:bg-slate-800 flex justify-between">
+            <span><b class="text-blue-600">4c798cf</b> C: normalize equipment records</span>
+            <span class="text-[var(--muted-foreground,#64748b)]">Data hygiene & issues</span>
+          </div>
+          <div class="p-2 rounded bg-emerald-100 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 flex justify-between">
+            <span><b class="text-emerald-600">e599ce8</b> record: update learning record with task c</span>
+            <span>All evidence synced</span>
+          </div>
+        </div>
+        <div class="text-center text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          🎯 Repository status: 100% completed, verified, and synchronized with origin/main.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="px-6 py-4 border-t border-[var(--border,#e2e8f0)] flex items-center justify-between bg-[var(--background,#f8fafc)]/60">
+      <button id="prev-btn" onclick="prevSlide()" class="px-3.5 py-1.5 rounded-lg border border-[var(--border,#e2e8f0)] text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition disabled:opacity-40 disabled:cursor-not-allowed">
+        ← Previous
+      </button>
+
+      <!-- Dots -->
+      <div class="flex items-center gap-1.5" id="dots-container">
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer active" onclick="goToSlide(0)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(1)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(2)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(3)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(4)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(5)"></span>
+        <span class="dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-200 cursor-pointer" onclick="goToSlide(6)"></span>
+      </div>
+
+      <button id="next-btn" onclick="nextSlide()" class="px-4 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition disabled:opacity-40 disabled:cursor-not-allowed">
+        Next →
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+    const badge = document.getElementById('slide-badge');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function updateSlide() {
+      slides.forEach((s, idx) => {
+        if (idx === currentSlide) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+
+      dots.forEach((d, idx) => {
+        if (idx === currentSlide) {
+          d.classList.add('active');
+        } else {
+          d.classList.remove('active');
+        }
+      });
+
+      badge.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
+      prevBtn.disabled = (currentSlide === 0);
+      nextBtn.disabled = (currentSlide === totalSlides - 1);
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlide();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
